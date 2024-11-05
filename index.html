@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longa Vida</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn-inserir { background-color: #4CAF50; color: white; }
+        .btn-inserir:hover { background-color: #45a049; }
+        
+        .btn-alterar { background-color: #FF9800; color: white; }
+        .btn-alterar:hover { background-color: #fb8c00; }
+        
+        .btn-excluir { background-color: #f44336; color: white; }
+        .btn-excluir:hover { background-color: #e53935; }
+    </style>
+</head>
+<body>
+    <h1>Gerenciamento de Dados</h1>
+    
+    <!-- Botões com eventos -->
+    <button class="btn-inserir" onclick="inserir()">Inserir</button>
+    <button class="btn-alterar" onclick="alterar()">Alterar</button>
+    <button class="btn-excluir" onclick="excluir(1)">Excluir</button>
+
+    <script>
+        // Função para exibir um alerta e redirecionar ao clicar no botão Inserir
+        function inserir() {
+            alert("Você clicou no botão Inserir!");
+            // Redirecionamento para a página 'inse.html'
+            window.location.href = 'inse.html';
+        }
+
+        // Função para exibir um alerta ao clicar no botão Alterar
+        function alterar() {
+            alert("Você clicou no botão Alterar!");
+            // Lógica para alterar um dado (pode ser exibido um formulário ou outra ação)
+        }
+
+        // Função para exibir um alerta ao clicar no botão Excluir
+        function excluir() {
+            alert("Você clicou no botão Excluir!");
+            // Lógica para excluir um dado (pode ser uma confirmação antes de excluir)
+            // Exemplo de confirmação:
+            // if (confirm('Tem certeza que deseja excluir?')) {
+            //     // lógica de exclusão
+            // }
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,39 @@
+<?php
+// Conectar ao banco de dados
+$servername = "localhost";
+$username = "root"; // seu usuário
+$password = ""; // sua senha
+$dbname = "meu_banco"; // nome do seu banco de dados
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar conexão
+if ($conn->connect_error) {
+    die("Falha na conexão: " . $conn->connect_error);
+}
+
+// Verificar se o ID foi enviado
+if (isset($_POST['id'])) {
+    $id = intval($_POST['id']); // Garantir que o ID seja um número inteiro
+
+    // SQL para excluir o item
+    $sql = "DELETE FROM tabela WHERE id = ?";
+    
+    // Preparar a consulta
+    if ($stmt = $conn->prepare($sql)) {
+        $stmt->bind_param("i", $id); // "i" significa inteiro
+        if ($stmt->execute()) {
+            echo "Item excluído com sucesso!";
+        } else {
+            echo "Erro ao excluir o item.";
+        }
+        $stmt->close();
+    } else {
+        echo "Erro na consulta SQL.";
+    }
+} else {
+    echo "ID não fornecido.";
+}
+
+$conn->close();
+?>
